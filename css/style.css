@@ -10092,3 +10092,35 @@ h6 {
   background-color: #007bff;
   color: white;
 }
+
+/* Estilo do botão de WhatsApp */
+#whatsappButton {
+  position: fixed;
+  bottom: 20px; /* Distância do fundo da tela */
+  left: 20px; /* Distância da lateral esquerda */
+  background-color: #25D366; /* Cor do botão do WhatsApp */
+  padding: 15px;
+  border-radius: 50%; /* Faz o botão redondo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave para profundidade */
+  z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+  animation: bounce 2s infinite; /* Animação de bounce */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo do ícone dentro do botão */
+#whatsappButton i {
+  font-size: 30px; /* Tamanho do ícone */
+  color: white; /* Cor do ícone */
+}
+
+/* Animação de bounce */
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0); /* Começa no lugar */
+  }
+  50% {
+      transform: translateY(-10px); /* Move para cima */
+  }
+}
