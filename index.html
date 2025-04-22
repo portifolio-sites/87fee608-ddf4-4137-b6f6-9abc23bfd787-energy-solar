@@ -1,91 +1,522 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eko Energy - Em Construção</title>
+    <meta charset="utf-8">
+    <title>Eko Energy</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-  <!-- Font Awesome via CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
 
-  <style>
-    @keyframes rotate-slow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    @keyframes bounce-text {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-    @keyframes pulse-ring {
-      0% { transform: scale(1); opacity: 0.5; }
-      70% { transform: scale(1.6); opacity: 0; }
-      100% { transform: scale(1); opacity: 0; }
-    }
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 
-    .rotate-slow {
-      animation: rotate-slow 10s linear infinite;
-    }
-
-    .bounce-text {
-      animation: bounce-text 1.5s ease-in-out infinite;
-    }
-
-    .pulse-ring {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 9999px;
-      background-color: #22c55e;
-      animation: pulse-ring 1.8s infinite;
-      z-index: 0;
-    }
-
-    .logotipo {
-      max-width: 200px;
-      margin: 0 auto;
-    }
-  </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
-<body class="bg-gradient-to-br from-green-100 to-yellow-50 h-screen flex items-center justify-center text-gray-800 relative overflow-hidden">
 
-  <div class="text-center px-4 z-10">
-    <!-- Sol animado -->
-    <div class="w-24 h-24 mx-auto mb-4 relative">
-      <div class="w-full h-full bg-yellow-400 rounded-full shadow-lg rotate-slow"></div>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <i class="fas fa-sun text-white text-2xl"></i>
-      </div>
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Navbar Start -->
+    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-dark navbar-dark py-1 py-lg-0 px-lg-5">
+        <a href="index.html" class="navbar-brand d-block d-lg-none">
+            <h1 class="display-4 text-white text-uppercase m-0">Eko Energy</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto py-0">
+                <a href="#home" class="nav-item nav-link active">Home</a>
+                <a href="#about" class="nav-item nav-link">Quem somos</a>
+                <a href="#service" class="nav-item nav-link">Serviços</a>
+            </div>
+            <a href="index.html" class="navbar-brand bg-dark px-4 mx-3 d-none d-lg-block">
+                <img src="img/logo.png" alt="" class="img-fluid logotipo">
+            </a>
+            <div class="navbar-nav mr-auto py-0">
+                <a href="#galeria" class="nav-item nav-link">Projetos</a>
+                <a href="#testimonial" class="nav-item nav-link">Clientes</a>
+                <a href="#contact" class="nav-item nav-link">Contato</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+
+    <!-- Hero Start -->
+    <section id="hero" class="position-relative" style="height: 100vh; overflow: hidden;">
+        <video autoplay muted loop playsinline class="position-absolute w-100 h-100"
+            style="object-fit: cover; z-index: 1;">
+            <source src="img/video.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos HTML5.
+        </video>
+        <div class="container h-100 d-flex align-items-center justify-content-center position-relative"
+            style="z-index: 2;">
+            <div class="text-center text-white">
+                <img src="img/logo.png" alt="" class="img-fluid logotipo">
+                <h1 class="display-4 font-weight-bold text-white">Energia limpa para um futuro sustentável</h1>
+                <p class="lead">Transforme a luz do sol em economia para sua casa ou negócio</p>
+                <a href="#about-video" class="btn btn-primary btn-lg mt-3">Conheça nossa história</a>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" id="about">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid mb-4 mb-lg-0" src="img/about.jpg" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Sobre</h6>
+                    <h1 class="display-4 mb-3"><span class="text-primary">ECO</span> Energy</h1>
+                    <p>Somos uma empresa especializada em soluções completas de energia solar para os setores
+                        Residencial,
+                        Comercial, Rural e Usinas de Investimento. Com mais de 8 anos de experiência, somos
+                        comprometidos com a
+                        sustentabilidade e inovação no setor energético. Já instalamos mais de 6,3 MW em usinas solares,
+                        consolidando um portfólio de projetos bem-sucedidos. Nosso compromisso é oferecer soluções
+                        eficientes e
+                        sustentáveis, ajudando nossos clientes a fazer parte da transição para uma matriz energética
+                        mais limpa
+                        e responsável. </p>
+                    <a class="btn btn-primary font-weight-bold py-3 px-5 mt-2" type="button" data-toggle="modal"
+                        data-target="#exampleModalLong">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Service Start -->
+    <div class="container-fluid py-5" id="service">
+        <div class="container py-5">
+            <div class="section-title position-relative text-center">
+                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Nossos Serviços</h6>
+                <h1 class="font-secondary display-4">Em que podemos te ajudar?</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <div class="product-item mb-2">
+                        <div class="product-img">
+                            <img class="img-fluid" src="img/product-1.jpg" alt="">
+                            <a type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#modalResidencial">
+                                <i class="fa fa-2x fa-plus text-white"></i>
+                            </a>
+                        </div>
+                        <div class="bg-secondary text-center p-4">
+                            <h3 class="m-0">Residencial 🏡</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-3">
+                    <div class="product-item mb-2">
+                        <div class="product-img">
+                            <img class="img-fluid" src="img/product-2.jpg" alt="">
+                            <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalRural">
+                                <i class="fa fa-2x fa-plus text-white"></i>
+                            </a>
+                        </div>
+                        <div class="bg-secondary text-center p-4">
+                            <h3 class="m-0">Rural 🌱</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-3">
+                    <div class="product-item mb-2">
+                        <div class="product-img">
+                            <img class="img-fluid" src="img/product-3.jpg" alt="">
+                            <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalIndustrial">
+                                <i class="fa fa-2x fa-plus text-white"></i>
+                            </a>
+                        </div>
+                        <div class="bg-secondary text-center p-4">
+                            <h3 class="m-0">Empresarial 🏭</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+    
+    <section class="container py-5" id="galeria">
+        <div class="text-center mb-4">
+            <h2 class="display-4">Nossos Projetos</h2>
+            <p>Veja alguns dos sistemas instalados pela Eco Energy, filtrando por categoria.</p>
+    
+            <div class="btn-group mt-3 flex-wrap" role="group" aria-label="Filtro">
+                <button type="button" class="btn btn-outline-primary active m-1" data-filter="all">Todos</button>
+                <button type="button" class="btn btn-outline-primary m-1" data-filter="residencial">Residencial</button>
+                <button type="button" class="btn btn-outline-primary m-1" data-filter="rural">Rural</button>
+                <button type="button" class="btn btn-outline-primary m-1" data-filter="empresarial">Empresarial</button>
+            </div>
+        </div>
+    
+        <div class="row" id="galleryContainer">
+    
+            <!-- Residencial -->
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-02.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-03.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-04.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-05.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-06.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-07.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-08.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-09.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-10.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-11.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-12.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-13.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-14.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-15.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-16.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="residencial">
+                <img src="img/Residencial/residencial-17.jpg" class="img-fluid rounded shadow" alt="Residencial">
+            </div>
+    
+            <!-- Rural -->
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="rural">
+                <img src="img/Rural/rural-01.jpg" class="img-fluid rounded shadow" alt="Rural">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="rural">
+                <img src="img/Rural/rural-02.jpg" class="img-fluid rounded shadow" alt="Empresarial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="rural">
+                <img src="img/Rural/rural-03.jpg" class="img-fluid rounded shadow" alt="Empresarial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="rural">
+                <img src="img/Rural/rural-04.jpg" class="img-fluid rounded shadow" alt="Empresarial">
+            </div>
+    
+            <!-- Empresarial -->
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="empresarial">
+                <img src="img/Empresarial/empresarial-01.jpg" class="img-fluid rounded shadow" alt="Empresarial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="empresarial">
+                <img src="img/Empresarial/empresarial-02.jpg" class="img-fluid rounded shadow" alt="Empresarial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="empresarial">
+                <img src="img/Empresarial/empresarial-03.jpg" class="img-fluid rounded shadow" alt="Empresarial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="empresarial">
+                <img src="img/Empresarial/empresarial-04.jpg" class="img-fluid rounded shadow" alt="Empresarial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="empresarial">
+                <img src="img/Empresarial/empresarial-05.jpg" class="img-fluid rounded shadow" alt="Empresarial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="empresarial">
+                <img src="img/Empresarial/empresarial-06.jpg" class="img-fluid rounded shadow" alt="Empresarial">
+            </div>
+            <div class="col-sm-6 col-md-4 mb-4 gallery-item" data-category="empresarial">
+                <img src="img/Empresarial/empresarial-07.jpg" class="img-fluid rounded shadow" alt="Empresarial">
+            </div>
+    
+            <!-- Adicionar mais categorias aqui, conforme necessário -->
+            
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll('[data-filter]');
+            const items = document.querySelectorAll('.gallery-item');
+    
+            // Função para filtrar as imagens com base na categoria
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    // Remover a classe "active" de todos os botões e adicionar no botão clicado
+                    buttons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+    
+                    // Obter o filtro selecionado
+                    const filter = this.getAttribute('data-filter');
+    
+                    // Mostrar ou esconder as imagens de acordo com o filtro
+                    items.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        if (filter === 'all' || category === filter) {
+                            item.style.display = 'block';  // Exibe o item
+                        } else {
+                            item.style.display = 'none';  // Oculta o item
+                        }
+                    });
+                });
+            });
+        });
+    </script>    
+
+    <!-- Modern Testimonial Start -->
+    <section class="container-fluid py-5 bg-primary text-white" id="testimonial">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4">O que dizem nossos clientes</h2>
+            </div>
+            <br><br>
+            <div class="owl-carousel testimonial-carousel">
+                <div class="p-4 bg-white text-dark rounded shadow text-center item">
+                    <p class="mb-4">"Instalação rápida, atendimento incrível e economia garantida! Super recomendo."</p>
+                    <h5 class="mb-1">João da Silva</h5>
+                    <small>Cliente Residencial</small>
+                </div>
+                <div class="p-4 bg-white text-dark rounded shadow text-center item">
+                    <p class="mb-4">"A Eko Energy transformou minha propriedade rural com energia limpa."</p>
+                    <h5 class="mb-1">Maria Oliveira</h5>
+                    <small>Cliente Rural</small>
+                </div>
+                <div class="p-4 bg-white text-dark rounded shadow text-center item">
+                    <p class="mb-4">"Agora economizo e ainda ajudo o meio ambiente. Excelente parceria!"</p>
+                    <h5 class="mb-1">Carlos Nunes</h5>
+                    <small>Empresário</small>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modern Testimonial End -->
+
+    <!-- Contact Start -->
+    <div class="container-fluid py-5" id="contact">
+        <div class="container py-5">
+            <div class="section-title position-relative text-center">
+                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Contato</h6>
+                <h1 class="font-secondary display-4">Vamos conversar?</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <div class="form-row">
+                                <div class="col-sm-6 control-group">
+                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3" id="name"
+                                        placeholder="Nome completo" required="required"
+                                        data-validation-required-message="Please enter your name" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    <input type="email" class="form-control bg-secondary border-0 py-4 px-3" id="email"
+                                        placeholder="Email" required="required"
+                                        data-validation-required-message="Please enter your email" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control bg-secondary border-0 py-4 px-3" id="subject"
+                                    placeholder="Assunto" required="required"
+                                    data-validation-required-message="Please enter a subject" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="6" id="message"
+                                    placeholder="Message" required="required"
+                                    data-validation-required-message="Please enter your message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit"
+                                    id="sendMessageButton">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+    <!-- Sessão Contato no Rodapé -->
+    <section class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Endereço -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-3">Nossa Localização</h5>
+                    <p class="mb-1">Rua C-210, Q 510, LT 16 s/n</p>
+                    <p class="mb-1">Jardim América - Goiânia/GO</p>
+                    <p class="mb-0">CEP: 74270-230</p>
+                </div>
+
+                <!-- Instagram -->
+                <div class="col-md-6 text-md-right">
+                    <h5 class="text-uppercase mb-3">Siga no Instagram</h5>
+                    <p class="mb-2">Acompanhe nossos projetos e novidades!</p>
+                    <a href="https://www.instagram.com/ekoenergyoficial/" target="_blank" class="btn btn-outline-light">
+                        <i class="fab fa-instagram mr-2"></i> @ekoenergyoficial
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="container-fluid bg-dark text-white text-center border-top py-4 px-sm-3 px-md-5"
+        style="border-color: rgba(256, 256, 256, .05) !important;">
+        <p class="m-0 text-white">2025 &copy; <a href="#">Eko Energy </a>. Todos os direitos reservados. Designed by <a
+                href="#">HTML Codex | Developer: Techsoluti</a></p>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalResidencial" tabindex="-1" role="dialog" aria-labelledby="modalResidencialLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalResidencialLabel">Energia Solar Residencial</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="img-fluid mb-4" src="img/carousel-1.jpg" alt="Energia Residencial">
+                    <p><strong>Soluções inteligentes para sua casa.</strong></p>
+                    <p>A energia solar residencial permite que famílias produzam sua própria energia de forma limpa e
+                        renovável. Com retorno rápido sobre o investimento, o sistema garante economia e independência
+                        energética.</p>
+                    <ul>
+                        <li>💡 Redução de até 95% na conta de luz</li>
+                        <li>🏡 Valorização do imóvel em até 8%</li>
+                        <li>📱 Monitoramento via aplicativo</li>
+                        <li>🔋 Energia limpa, silenciosa e de baixa manutenção</li>
+                        <li>💰 Financiamentos facilitados com bancos parceiros</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Logotipo -->
-    <img src="img/logo.png" alt="Eko Energy Logo" class="logotipo mb-6">
-
-    <!-- Título -->
-    <h1 class="text-3xl md:text-4xl font-bold mb-2 text-green-700">Eko Energy</h1>
-    <p class="text-lg md:text-xl text-green-800 bounce-text">Página em construção ☀️</p>
-    <p class="mt-4 text-sm text-gray-600">Estamos preparando algo incrível. Aguarde!</p>
-
-    <!-- Rodapé -->
-    <div class="mt-10 text-xs text-gray-400">
-      &copy; <span id="year"></span> Eko Energy. Todos os direitos reservados.
+    <div class="modal fade" id="modalRural" tabindex="-1" role="dialog" aria-labelledby="modalRuralLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalRuralLabel">Energia Solar Rural</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="img-fluid mb-4" src="img/carousel-2.jpg" alt="Energia Rural">
+                    <p><strong>Produtividade e autonomia para o campo.</strong></p>
+                    <p>Com a energia solar rural, é possível alimentar sistemas de irrigação, resfriamento de leite,
+                        cercas elétricas e muito mais — mesmo em regiões distantes da rede elétrica convencional.</p>
+                    <ul>
+                        <li>🚜 Redução de custos com energia elétrica</li>
+                        <li>🌱 Maior autonomia e produtividade</li>
+                        <li>💳 Linhas de crédito específicas para o agronegócio</li>
+                        <li>📦 Soluções personalizadas para diversas culturas</li>
+                        <li>🌞 Sustentabilidade e preservação do meio ambiente</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Botão WhatsApp flutuante -->
-  <a href="https://wa.me/5511999999999" target="_blank"
-     class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:scale-110 transition-transform duration-300">
-    <i class="fab fa-whatsapp"></i>
-  </a>
 
-  <!-- Script para atualizar o ano automaticamente -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <div class="modal fade" id="modalIndustrial" tabindex="-1" role="dialog" aria-labelledby="modalIndustrialLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalIndustrialLabel">Energia Solar Empresarial e Comercial</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="img-fluid mb-4" src="img/3.png" alt="Energia Empresarial">
+                    <p><strong>Alta performance energética para grandes demandas.</strong></p>
+                    <p>Empresas e indústrias reduzem custos e aumentam sua competitividade com a energia solar. Além de
+                        economia, ganham em imagem e responsabilidade ambiental.</p>
+                    <ul>
+                        <li>🏭 Economia de alto impacto no consumo energético</li>
+                        <li>📊 Retorno sobre investimento médio entre 3 a 5 anos</li>
+                        <li>✅ Baixa manutenção e monitoramento inteligente</li>
+                        <li>📈 Redução da pegada de carbono e marketing sustentável</li>
+                        <li>🔌 Energia estável mesmo em horários de pico</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+
+
+    <!-- Scroll to Bottom -->
+    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i
+            class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>
