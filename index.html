@@ -115,35 +115,100 @@
 
     <!-- Service Start -->
     <!-- Botões de Categoria -->
+    <style>
+        .project-card {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            /* proporção quadrada */
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: scale(1.03);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 50, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            background-color: rgba(0, 0, 70, 0.6);
+        }
+
+        .project-icon {
+            font-size: 3rem;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-icon {
+            transform: scale(1.2);
+        }
+
+        .project-label {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            color: #333;
+        }
+    </style>
+
     <div class="container text-center my-5">
         <div class="text-center mb-4">
-            <h2 class="display-4">Nossos Projetos</h2>
-            <p>Veja alguns dos sistemas instalados pela EKO Energy, filtrando por categoria.</p>
+            <h2 class="display-4 fw-bold text-primary">Nossos Projetos</h2>
+            <p class="text-muted">Veja alguns dos sistemas instalados pela <strong>EKO Energy</strong>, filtrando por
+                categoria.</p>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-4 col-sm-3 col-md-2">
-                <div class="border p-4 position-relative">
-                    <a href="#" class="abrir-galeria" data-galeria="residencial">
-                        <i class="fa fa-plus fa-3x"></i>
-                    </a>
+
+        <div class="row justify-content-center g-4">
+            <!-- RESIDENCIAL -->
+            <div class="col-6 col-sm-4 col-md-3">
+                <div class="project-card abrir-galeria" data-galeria="residencial"
+                    style="background-image: url('img/product-1.jpg');">
+                    <div class="project-overlay">
+                        <i class="fa fa-plus project-icon"></i>
+                    </div>
                 </div>
-                <strong class="d-block mt-2 text-dark text-uppercase" style="font-size: 0.9rem;">Residencial</strong>
+                <div class="project-label">Residencial</div>
             </div>
-            <div class="col-4 col-sm-3 col-md-2">
-                <div class="border p-4 position-relative">
-                    <a href="#" class="abrir-galeria" data-galeria="empresarial">
-                        <i class="fa fa-plus fa-3x"></i>
-                    </a>
+
+            <!-- COMERCIAL -->
+            <div class="col-6 col-sm-4 col-md-3">
+                <div class="project-card abrir-galeria" data-galeria="empresarial"
+                    style="background-image: url('img/product-2.jpg');">
+                    <div class="project-overlay">
+                        <i class="fa fa-plus project-icon"></i>
+                    </div>
                 </div>
-                <strong class="d-block mt-2 text-dark text-uppercase" style="font-size: 0.9rem;">Comercial</strong>
+                <div class="project-label">Comercial</div>
             </div>
-            <div class="col-4 col-sm-3 col-md-2">
-                <div class="border p-4 position-relative">
-                    <a href="#" class="abrir-galeria" data-galeria="investimento">
-                        <i class="fa fa-plus fa-3x"></i>
-                    </a>
+
+            <!-- RURAL -->
+            <div class="col-6 col-sm-4 col-md-3">
+                <div class="project-card abrir-galeria" data-galeria="investimento"
+                    style="background-image: url('img/product-3.jpg');">
+                    <div class="project-overlay">
+                        <i class="fa fa-plus project-icon"></i>
+                    </div>
                 </div>
-                <strong class="d-block mt-2 text-dark text-uppercase" style="font-size: 0.9rem;">Rural</strong>
+                <div class="project-label">Rural</div>
             </div>
         </div>
     </div>
@@ -306,42 +371,36 @@
         <div class="container py-5">
             <div class="section-title position-relative text-center">
                 <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Contato</h6>
-                <h1 class="font-secondary display-4">Vamos conversar?</h1>
+                <h1 class="font-secondary display-4">Solicite seu orçamento</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="contact-form">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <form id="whatsappForm">
                             <div class="form-row">
-                                <div class="col-sm-6 control-group">
+                                <div class="col-sm-6 control-group mb-3">
                                     <input type="text" class="form-control bg-secondary border-0 py-4 px-3" id="name"
-                                        placeholder="Nome completo" required="required"
-                                        data-validation-required-message="Please enter your name" />
-                                    <p class="help-block text-danger"></p>
+                                        placeholder="Nome completo" required />
                                 </div>
-                                <div class="col-sm-6 control-group">
-                                    <input type="email" class="form-control bg-secondary border-0 py-4 px-3" id="email"
-                                        placeholder="Email" required="required"
-                                        data-validation-required-message="Please enter your email" />
-                                    <p class="help-block text-danger"></p>
+                                <div class="col-sm-6 control-group mb-3">
+                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3" id="phone"
+                                        placeholder="Telefone com DDD" required />
                                 </div>
                             </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control bg-secondary border-0 py-4 px-3" id="subject"
-                                    placeholder="Assunto" required="required"
-                                    data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="6" id="message"
-                                    placeholder="Message" required="required"
-                                    data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
+                            <div class="form-row">
+                                <div class="col-sm-6 control-group mb-3">
+                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3" id="city"
+                                        placeholder="Cidade" required />
+                                </div>
+                                <div class="col-sm-6 control-group mb-3">
+                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3"
+                                        id="consumption" placeholder="Consumo médio (kWh/mês)" required />
+                                </div>
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit"
-                                    id="sendMessageButton">Enviar</button>
+                                <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit">
+                                    Enviar
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -350,6 +409,30 @@
         </div>
     </div>
     <!-- Contact End -->
+
+    <script>
+        document.getElementById("whatsappForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const city = document.getElementById("city").value.trim();
+            const consumption = document.getElementById("consumption").value.trim();
+
+            const message = `Olá, gostaria de solicitar um orçamento!%0A%0A` +
+                `📌 *Nome:* ${name}%0A` +
+                `📞 *Telefone:* ${phone}%0A` +
+                `🏙️ *Cidade:* ${city}%0A` +
+                `⚡ *Consumo médio:* ${consumption} kWh/mês`;
+
+            const whatsappNumber = "5562993911342";
+
+            const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+            window.open(url, "_blank");
+        });
+    </script>
+
 
     <a href="https://wa.me/5562996430503" target="_blank" id="whatsappButton">
         <i class="fab fa-whatsapp"></i>
